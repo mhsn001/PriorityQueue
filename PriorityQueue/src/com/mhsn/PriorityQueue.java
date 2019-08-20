@@ -33,16 +33,22 @@ import java.util.List;
 public class PriorityQueue {
 
 	private List<Task> heap;
-	private int heapSize;
-	private int capacity;
+	
+	// if want to use Array in place of ArrayList then use below declarations and code will be changed in order to maintain heapSize and capacity
+	//int[] heap;
+	//private int heapSize;
+	//private int capacity;
 	
 	
-	
-	public PriorityQueue(int capacity){
+	//use below constructor if using capacity factor
+	/*public PriorityQueue(int capacity){
 		this.capacity = capacity;
 		heap = new ArrayList<Task>();
-	}
+	}*/
 	
+	public PriorityQueue(){
+		heap = new ArrayList<Task>();
+	}
 
 	public void insert(String job, int priority){
 		
@@ -136,7 +142,7 @@ public class PriorityQueue {
 	}
 	
 	public static void main(String[] args) {
-		PriorityQueue pq = new PriorityQueue(10);
+		PriorityQueue pq = new PriorityQueue();
 		System.out.print("Adding elemenats");
 		pq.insert("job-50", 50);
 		pq.insert("job-40", 40);
